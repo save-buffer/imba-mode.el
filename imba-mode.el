@@ -52,28 +52,27 @@
   :safe 'natnump
   :group 'imba)
 
-
 (defface imba-function-name-face
-  '((t :foreground "Blue1" :weight bold))
+  `((t :foreground ,(face-foreground font-lock-function-name-face) :weight bold))
   "Face for function parameters."
   :group 'imba )
 
 (defface imba-function-state-name-face
-  '((t :foreground "dark cyan" :weight bold))
+  `((t :foreground ,(face-foreground font-lock-function-name-face) :weight bold))
   "Face for function state."
   :group 'imba )
 
 (defface imba-keyword-face
-  '((t :foreground "DarkGreen" :weight bold))
+  `((t :foreground ,(face-foreground font-lock-keyword-face) :weight bold))
   "Face for function state."
   :group 'imba )
 
 (defface imba-string-variable-name-face
-  '((t :foreground "DarkRed" :weight bold))
+  `((t :foreground ,(face-foreground font-lock-string-face) :weight bold))
   "Face for interpolation string."
   :group 'imba )
 
-(setq imba-highlights
+(defvar imba-highlights
       '(("#\\s+.+$" . (0 font-lock-comment-face))
         ("\\b\\(export\\|import\\|require\\|Imba\\|route\\([\.-][A-Za-z_]+\\)*\\)\\b" . (1 'imba-keyword-face))        
         ("\\b\\([A-Za-z_][A-Za-z_0-9-]*\\)[\.]new" . (1 font-lock-type-face))
